@@ -1,0 +1,60 @@
+<div class="container">
+    <div class="header">
+        <h2>
+            Calculator component
+        </h2> 
+    </div>
+
+    <form #myForm="ngForm" novalidate>
+        
+        <div class="grid">
+            <div class="row">
+                <div class="col-6">
+                    <div class="operation">
+                        <div class="row">
+                            <div class="col-12">
+                                <input [(ngModel)]="number1" type="number" name="num1" placeholder="number">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <input [(ngModel)]="number2" type="number" name="num2" placeholder="number">
+                                <!--<input [ngModel]="number2" (ngModelChange)="number2 = $event" type="input" name="num2">-->
+                            </div>
+                        </div>
+                        <div>
+                            <div class="col-12">
+                                <button [disabled]="!myForm.valid" (click)="add()" class="button">
+                                    Add 
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="result">
+                        <span>
+                            Number 1 : {{number1}}
+                            Number 2 : {{number2}}
+                        </span>
+                    </div>
+
+                    <div class="result">
+                        <span>
+                            Result : {{result}}
+                        </span>
+                    </div>
+
+                    <div class="col-sm-6">
+                      <pre class="highlight">{{CalcComponent | json}}</pre>
+                      <pre class="highlight">{{myForm.value | json}}</pre>
+                      <pre class="highlight">{{myForm.valid | json}}</pre>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+    </form>
+
+</div>

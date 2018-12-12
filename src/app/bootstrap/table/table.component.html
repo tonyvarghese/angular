@@ -1,0 +1,18 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>FirstName</th>
+      <th>LastName</th>
+      <th>Age</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr *ngFor="let customer of CUSTOMERS">
+          <td>{{ customer.id }}</td>
+          <td>{{ customer.name }}</td>
+          <td>{{ customer.nationality }}</td>
+          <td>{{ customer.age }}</td>
+      </tr>
+  </tbody>
+</table>
